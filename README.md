@@ -1,39 +1,6 @@
-# Ackee GCE Elasticsearch Terraform module
+# Moved
 
-This module is primary written for provisioning of GCE instance from our ES image (https://github.com/AckeeCZ/packer-elasticsearch)
-
-It does a few things :
-* Generates GCP IAM Service Account with Storage Admin role for backups and insert it into ES keystore
-* Downloads RAW disk from GCS and create an image from it. (you can generate your own image with Packer using https://github.com/AckeeCZ/packer-elasticsearch)
-* Create SSH key for instance provisioning
-* Create (GCP) firewall rules so GKE "gateway" pods can reach GCE cluster
-
-## Usage
-
-```hcl
-module "elasticsearch_prod" {
-  source            = "github.com/AckeeCZ/terraform-elasticsearch?ref=v5.4.0"
-  project           = "my-gcp-project"
-  region            = "europe-west3"
-  zone              = "europe-west3-c"
-  instance_name     = "elasticsearch-prod"
-  cluster_name      = "elasticsearch"
-  cluster_ipv4_cidr = "10.128.0.0/14"
-  node_count        = "3"
-  heap_size         = "1500m"
-  raw_image_source  = "https://storage.googleapis.com/ackee-images/ackee-elasticsearch-7-disk-79.tar.gz"
-  data_disk_size    = "10"
-}
-```
-
-## Before you do anything in this module
-
-Install pre-commit hooks by running following commands:
-
-```shell script
-brew install pre-commit
-pre-commit install
-```
+Please use repository on new URL : https://github.com/AckeeCZ/terraform-gcp-elasticsearch
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
